@@ -302,7 +302,7 @@ public class ProtobufSchemaCodegen extends DefaultCodegen implements CodegenConf
                 // add x-protobuf-type: repeated if it's an array
                 if (Boolean.TRUE.equals(var.isArray)) {
                     var.vendorExtensions.put("x-protobuf-type", "repeated");
-                } else if (Boolean.TRUE.equals(var.isNullable && var.isPrimitiveType)) {
+                } else if (Boolean.TRUE.equals(var.notRequiredOrIsNullable())) {
                     var.vendorExtensions.put("x-protobuf-type", "optional");
                 }
 
@@ -559,7 +559,7 @@ public class ProtobufSchemaCodegen extends DefaultCodegen implements CodegenConf
 
                 if (Boolean.TRUE.equals(p.isArray)) {
                     p.vendorExtensions.put("x-protobuf-type", "repeated");
-                } else if (Boolean.TRUE.equals(p.isNullable && p.isPrimitiveType)) {
+                } else if (Boolean.TRUE.equals(p.notRequiredOrIsNullable())) {
                     p.vendorExtensions.put("x-protobuf-type", "optional");
                 } else if (Boolean.TRUE.equals(p.isMap)) {
                     LOGGER.warn("Map parameter (name: {}, operation ID: {}) not yet supported", p.paramName, op.operationId);
