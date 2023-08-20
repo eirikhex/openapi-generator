@@ -16,10 +16,10 @@ message Pet {
 
   string petType = 140636936;
 
-  optional string name = 3373707;
+  string name = 3373707;
 
-  optional string bark = 3016376;
+  string bark = 3016376;
 
-  optional bool lovesRocks = 499337491;
+  bool lovesRocks = 499337491;
 
 }
