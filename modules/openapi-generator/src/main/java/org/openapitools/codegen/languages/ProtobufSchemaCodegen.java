@@ -229,7 +229,7 @@ public class ProtobufSchemaCodegen extends DefaultCodegen implements CodegenConf
 
             for (Map<String, Object> value : enumVars) {
                 String name = (String) value.get("name");
-                value.put("name", prefix + "_" + name);
+                // value.put("name", prefix + "_" + name);
                 value.put("value", "\"" + prefix + "_" + name + "\"");
             }
         }
