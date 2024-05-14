@@ -54,6 +54,8 @@ public class ProtobufSchemaCodegen extends DefaultCodegen implements CodegenConf
 
     public static final String START_ENUMS_WITH_UNKNOWN = "startEnumsWithUnknown";
 
+    public static final String PREFIX_ENUMS_WITH_ENUM_NAME = "prefixEnumsWithEnumName"
+
     private final Logger LOGGER = LoggerFactory.getLogger(ProtobufSchemaCodegen.class);
 
     protected String packageName = "openapitools";
@@ -61,6 +63,8 @@ public class ProtobufSchemaCodegen extends DefaultCodegen implements CodegenConf
     private boolean numberedFieldNumberList = false;
 
     private boolean startEnumsWithUnknown = false;
+
+    private boolean prefixEnumsWithEnumName = true;
 
     @Override
     public CodegenType getTag() {
@@ -163,6 +167,7 @@ public class ProtobufSchemaCodegen extends DefaultCodegen implements CodegenConf
 
         addSwitch(NUMBERED_FIELD_NUMBER_LIST, "Field numbers in order.", numberedFieldNumberList);
         addSwitch(START_ENUMS_WITH_UNKNOWN, "Introduces \"UNKNOWN\" as the first element of enumerations.", startEnumsWithUnknown);
+        addSwitch(PREFIX_ENUMS_WITH_ENUM_NAME, "TODO: Write .", prefixEnumsWithEnumName);
     }
 
     @Override
